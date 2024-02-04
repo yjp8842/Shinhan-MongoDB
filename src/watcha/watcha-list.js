@@ -1,11 +1,14 @@
+import dotenv from "dotenv";
+
 import service from "../watcha/watcha-service.js";
 import MovieFS from "../watcha/movie-fs.js";
 
 import mongoose from "mongoose";
 import Movie from "../models/movie.js";
 
-const MONGO_HOST =
-  "mongodb+srv://admin:admin1234@cluster0.6xo1zdz.mongodb.net/movies";
+dotenv.config({ path: "../../.env" });
+
+const MONGO_HOST = MONGO_HOST_URL;
 mongoose
   .connect(MONGO_HOST, {
     retryWrites: true,
